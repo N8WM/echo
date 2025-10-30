@@ -1,0 +1,41 @@
+model Topic {
+  id             String   @id @default(cuid())
+  guildSnowflake String
+  summary        String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  guild    Guild     @relation(fields: [guildSnowflake], references: [snowflake], onDelete: Cascade)
+  messages Message[]
+
+  topic_summary_embeddings_store topic_summary_embeddings_store[]
+}
+
+model Message {
+  messageSnowflake String
+  guildSnowflake   String
+  channelSnowflake String
+  topicId          String
+  content          String
+  authorSnowflake  String
+  timestamp        DateTime
+  createdAt        DateTime @default(now())
+
+  guild Guild @relation(fields: [guildSnowflake], references: [snowflake], onDelete: Cascade)
+  topic Topic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+
+  @@id([messageSnowflake, topicId])
+}
+
+// INTROSPECTED: See vectorizer migration
+model topic_summary_embeddings_store {
+  embedding_uuid String                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  id             String
+  chunk_seq      Int
+  chunk          String
+  embedding      Unsupported("vector")
+
+  topic Topic @relation(fields: [id], references: [id], onDelete: Cascade)
+
+  @@unique([id, chunk_seq])
+}

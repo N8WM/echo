@@ -1,0 +1,57 @@
+name: echo
+
+services:
+  db:
+    image: timescale/timescaledb-ha:pg17
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /home/postgres/pgdata/data
+      OLLAMA_HOST: ${OLLAMA_HOST}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/home/postgres/pgdata
+      - ./src/db/init:/docker-entrypoint-initdb.d:ro
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  pgai-install:
+    image: timescale/pgai-vectorizer-worker:latest
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PGAI_VECTORIZER_WORKER_DB_URL: postgres://postgres:postgres@db:5432/postgres
+    entrypoint:
+      - sh
+      - -c
+      - |
+        python -m pgai install -d postgres://postgres:postgres@db:5432/postgres &&
+        python -m pgai install -d postgres://postgres:postgres@db:5432/template1
+    restart: "no"
+
+  vectorizer-worker:
+    image: timescale/pgai-vectorizer-worker:latest
+    depends_on:
+      pgai-install:
+        condition: service_completed_successfully
+    environment:
+      PGAI_VECTORIZER_WORKER_DB_URL: postgres://postgres:postgres@db:5432/postgres
+      OLLAMA_HOST: ${OLLAMA_HOST}
+    command: ["--poll-interval", "5s"]
+    restart: unless-stopped
+
+  # ollama:
+  #   image: ollama/ollama
+  #   restart: unless-stopped
+  #   ports:
+  #     - "11434:11434"
+
+volumes:
+  pgdata:

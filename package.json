@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "echo",
+  "version": "1.0.0",
+  "description": "Discord bot infrastructure with registry, LLM FAQ tooling, and Postgres persistence",
+  "main": "dist/app/index.js",
+  "scripts": {
+    "dev": "tsx watch src/app/index.ts",
+    "build": "tsc && tsc-alias",
+    "start": "node .",
+    "dc:up": "docker compose up -d",
+    "dc:reup": "docker compose down -v && docker compose up -d",
+    "dc:down": "docker compose down",
+    "dc:logs:db": "docker compose logs -f db",
+    "dc:logs:vector": "docker compose logs -f vectorizer-worker",
+    "dc:logs:ollama": "docker compose logs -f ollama",
+    "prisma:generate": "npx prisma generate && npx prisma generate --sql",
+    "prisma:migrate": "npx prisma migrate dev && npm run prisma:generate",
+    "prisma:deploy": "npx prisma migrate deploy && npm run prisma:generate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nmccutchen/echo.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^6.17.1",
+    "discord.js": "^14.20.0",
+    "dotenv": "^16.5.0",
+    "node-cron": "^4.2.1",
+    "ollama": "^0.5.17",
+    "pino": "^9.7.0",
+    "pino-pretty": "^13.0.0",
+    "xmlbuilder2": "^3.1.1"
+  },
+  "devDependencies": {
+    "@stylistic/eslint-plugin": "^5.3.1",
+    "@types/node": "^24.0.3",
+    "eslint": "^9.29.0",
+    "prisma": "^6.17.1",
+    "tsc-alias": "^1.8.16",
+    "tsx": "^4.20.3",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.42.0"
+  }
+}

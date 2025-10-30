@@ -1,0 +1,53 @@
+/* Visit https://aka.ms/tsconfig to read more about this file */
+{
+  "$schema": "https://json.schemastore.org/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@app/*": [
+        "app/*"
+      ],
+      "@core/*": [
+        "core/*"
+      ],
+      "@lib/*": [
+        "lib/*"
+      ],
+      "@services": [
+        "services/index.ts"
+      ],
+      "@config": [
+        "app/config.ts"
+      ],
+    },
+    "target": "ES2022",
+    "lib": [
+      "ESNEXT"
+    ],
+    "module": "CommonJS",
+    "sourceMap": true,
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "declaration": false,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "outDir": "dist",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/@discordjs/typings"
+    ]
+  },
+  "include": [
+    "src",
+    "__tests__",
+    "*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/_*_old"
+  ]
+}

@@ -9,14 +9,14 @@ export class RecallTools {
         description: "Add a quoted message from a user",
         parameters: {
           type: "object",
-          required: ["messageId", "mhbna"],
+          required: ["messageId"],
           properties: {
             messageId: {
               type: "string",
               enum: ids,
               description: "The ID of the message to quote"
             },
-            mhbna: {
+            isNearAnswer: {
               type: "boolean",
               description: "Whether to mark this quote as \"Maybe Helpful But Not an Answer\" (default to false)"
             }

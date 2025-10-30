@@ -41,7 +41,7 @@ export class ExchangeBuilder {
     return this._messages;
   }
 
-  userQuote(messageSnowflake: string, mhbna: boolean) {
+  userQuote(messageSnowflake: string, isNearAnswer: boolean = false) {
     const message = this.messages.get(messageSnowflake);
     if (!message) return Result.err("Invalid Message");
 
@@ -61,7 +61,7 @@ export class ExchangeBuilder {
         )
     );
 
-    if (mhbna) {
+    if (isNearAnswer) {
       container.setAccentColor([180, 50, 50]);
     }
 

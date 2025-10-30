@@ -65,8 +65,8 @@ export class RecallSequence {
       for (const call of toolCalls) {
         switch (call.function.name) {
           case "userQuote": {
-            const args = call.function.arguments as { messageId: string; mhbna?: boolean };
-            exchange.userQuote(args.messageId, args.mhbna ?? false);
+            const args = call.function.arguments as { messageId: string; isNearAnswer?: boolean };
+            exchange.userQuote(args.messageId, args.isNearAnswer ?? false);
             added.push(args.messageId);
             await updateCb(".", true);
             break;

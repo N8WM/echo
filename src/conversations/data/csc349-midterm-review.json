@@ -1,43 +1,29 @@
 {
   "name": "csc349-midterm-review",
   "description": "CSC 349 students coordinating study resources before the midterm",
-  "actors": {
-    "alex": {
-      "displayName": "Alex P.",
-      "avatarUrl": "https://cdn.discordapp.com/embed/avatars/3.png"
-    },
-    "maria": {
-      "displayName": "Maria L.",
-      "avatarUrl": "https://cdn.discordapp.com/embed/avatars/4.png"
-    },
-    "prof": {
-      "displayName": "Prof. Armando",
-      "avatarUrl": "https://cdn.discordapp.com/embed/avatars/5.png"
-    }
-  },
   "events": [
     {
-      "actorId": "alex",
+      "personaId": "alex-p",
       "content": "Did anyone confirm if the CSC 349 midterm is still on Tuesday night? Piazza has like three conflicting posts."
     },
     {
-      "actorId": "maria",
+      "personaId": "maria-l",
       "content": "He clarified in lecture it\u2019s Tuesday 10/24 at 7pm in 186-104. He said the Zoom link is only for overflow if you\u2019re quarantined."
     },
     {
-      "actorId": "alex",
+      "personaId": "alex-p",
       "content": "Sweet, thanks! Is there a study guide or are we just using the homework sets?"
     },
     {
-      "actorId": "prof",
+      "personaId": "dr-armando",
       "content": "Homework sets are still the best prep, but I dropped a practice midterm and solution outline in Canvas under Files \u2192 Midterm Resources."
     },
     {
-      "actorId": "maria",
+      "personaId": "maria-l",
       "content": "Also Prof said office hours are extended Monday 3-5pm if you want last-minute Q&A."
     },
     {
-      "actorId": "alex",
+      "personaId": "alex-p",
       "content": "Perfect, I\u2019ll swing by those office hours. Thanks for the heads-up!"
     }
   ]

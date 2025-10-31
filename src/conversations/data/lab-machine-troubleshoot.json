@@ -1,43 +1,29 @@
 {
   "name": "lab-machine-troubleshoot",
   "description": "Debugging access to the CPE lab machines for systems programming",
-  "actors": {
-    "nate": {
-      "displayName": "Nate H.",
-      "avatarUrl": "https://cdn.discordapp.com/embed/avatars/2.png"
-    },
-    "sam": {
-      "displayName": "TA Sam",
-      "avatarUrl": "https://cdn.discordapp.com/embed/avatars/7.png"
-    },
-    "riley": {
-      "displayName": "Riley D.",
-      "avatarUrl": "https://cdn.discordapp.com/embed/avatars/8.png"
-    }
-  },
   "events": [
     {
-      "actorId": "nate",
+      "personaId": "nate-h",
       "content": "Anyone else getting denied when SSHing into the cpe lab machines? I followed the lab 2 directions but keep getting permission denied (publickey)."
     },
     {
-      "actorId": "sam",
+      "personaId": "sam-w",
       "content": "Make sure you added your public key to https://linux-login.csc.calpoly.edu and checked the box for \"357\" access. It takes about 5 minutes to propagate."
     },
     {
-      "actorId": "nate",
+      "personaId": "nate-h",
       "content": "I added it this morning. Do I need to use a specific host name?"
     },
     {
-      "actorId": "riley",
+      "personaId": "riley-d",
       "content": "Use `cpe-01.csc.calpoly.edu`. If that\u2019s full try 02 or 03. Also double check your key permissions: `chmod 600 ~/.ssh/id_ed25519`."
     },
     {
-      "actorId": "sam",
+      "personaId": "sam-w",
       "content": "If it still fails email support@csc.calpoly.edu with your username. They\u2019ll reset your unix account - mention you\u2019re in CSC 357."
     },
     {
-      "actorId": "nate",
+      "personaId": "nate-h",
       "content": "Got it working after the chmod. Thanks everyone!"
     }
   ]

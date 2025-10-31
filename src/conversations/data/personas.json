@@ -1,0 +1,64 @@
+{
+  "personas": [
+    {
+      "id": "sam-w",
+      "displayName": "Sam W.",
+      "avatarUrl": "https://cdn.discordapp.com/embed/avatars/0.png",
+      "description": "Fourth-year CSC student in the blended BS+MS program, serves as a CSC 357 lab TA and loves troubleshooting systems bugs."
+    },
+    {
+      "id": "jess-k",
+      "displayName": "Jess K.",
+      "avatarUrl": "https://cdn.discordapp.com/embed/avatars/1.png",
+      "description": "Third-year Software Engineering major with a focus on concurrency and backend tooling; study buddy in many lower-division labs."
+    },
+    {
+      "id": "alex-p",
+      "displayName": "Alex P.",
+      "avatarUrl": "https://cdn.discordapp.com/embed/avatars/2.png",
+      "description": "Second-year CSC student juggling band rehearsals and algorithms; often organizes midterm study groups."
+    },
+    {
+      "id": "maria-l",
+      "displayName": "Maria L.",
+      "avatarUrl": "https://cdn.discordapp.com/embed/avatars/3.png",
+      "description": "Fourth-year CSC and math double-major who keeps meticulous Piazza notes and curates class resource folders."
+    },
+    {
+      "id": "dr-armando",
+      "displayName": "Dr. Armando",
+      "avatarUrl": "https://cdn.discordapp.com/embed/avatars/4.png",
+      "description": "CSC 349 professor who blends theoretical proofs with practical take-home questions; actively posts clarifications on Canvas."
+    },
+    {
+      "id": "jamie-t",
+      "displayName": "Jamie T.",
+      "avatarUrl": "https://cdn.discordapp.com/embed/avatars/5.png",
+      "description": "Fourth-year Computer Engineering student polishing portfolios before graduation; leads IEEE workshop signups."
+    },
+    {
+      "id": "li-n",
+      "displayName": "Li N.",
+      "avatarUrl": "https://cdn.discordapp.com/embed/avatars/0.png",
+      "description": "Fifth-year CSC student finishing the blended MS, mentors ACM interview prep and keeps tabs on campus recruiting events."
+    },
+    {
+      "id": "acm-officer",
+      "displayName": "ACM Officer",
+      "avatarUrl": "https://cdn.discordapp.com/embed/avatars/2.png",
+      "description": "ACM chapter officer coordinating industry outreach, resume reviews, and member communications."
+    },
+    {
+      "id": "nate-h",
+      "displayName": "Nate H.",
+      "avatarUrl": "https://cdn.discordapp.com/embed/avatars/3.png",
+      "description": "Third-year CSC student deep into systems programming; documents every hurdle in the CPE labs."
+    },
+    {
+      "id": "riley-d",
+      "displayName": "Riley D.",
+      "avatarUrl": "https://cdn.discordapp.com/embed/avatars/4.png",
+      "description": "Graduate student in the parallel computing lab; pops into Discord to share shell tips and GPU access info."
+    }
+  ]
+}

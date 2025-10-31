@@ -1,6 +1,6 @@
 export type Ok<T> = { readonly ok: true; readonly value: T };
 export type Err<E> = { readonly ok: false; readonly error: E };
-export type Result<T, E = string> = Ok<T, E> | Err<E>;
+export type Result<T, E = string> = Ok<T> | Err<E>;
 
 /**
  * Lightweight Result helpers for ergonomic error handling.

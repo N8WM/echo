@@ -19,8 +19,8 @@
       "@config": [
         "app/config.ts"
       ],
-      "@scenarios/*": [
-        "scenarios/*"
+      "@conversations/*": [
+        "conversations/*"
       ]
     },
     "target": "ES2022",

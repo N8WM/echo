@@ -8,13 +8,13 @@ import {
 
 import { CommandHandler } from "@core/registry";
 
-import { cancelScenarioRun, isScenarioRunning } from "@scenarios/runner";
+import { cancelConversationRun, isConversationRunning } from "@conversations/runner";
 
 const handler: CommandHandler<ApplicationCommandType.ChatInput> = {
   type: ApplicationCommandType.ChatInput,
   data: new SlashCommandBuilder()
-    .setName("scenario-cancel")
-    .setDescription("Stops a running scenario in the specified text channel")
+    .setName("conversation-cancel")
+    .setDescription("Stops a running conversation replay in the specified text channel")
     .setContexts(InteractionContextType.Guild)
     .addChannelOption((option) =>
       option
@@ -29,24 +29,24 @@ const handler: CommandHandler<ApplicationCommandType.ChatInput> = {
     const channelOption = interaction.options.getChannel("channel") ?? interaction.channel;
 
     if (!channelOption || channelOption.type !== ChannelType.GuildText) {
-      await interaction.editReply("Select a guild text channel to cancel the scenario.");
+      await interaction.editReply("Select a guild text channel to cancel the conversation replay.");
       return;
     }
 
     const targetChannel = channelOption as TextChannel;
 
-    if (!isScenarioRunning(targetChannel.id)) {
-      await interaction.editReply("No scenario is currently running in that channel.");
+    if (!isConversationRunning(targetChannel.id)) {
+      await interaction.editReply("No conversation replay is currently running in that channel.");
       return;
     }
 
-    const cancelled = cancelScenarioRun(targetChannel.id);
+    const cancelled = cancelConversationRun(targetChannel.id);
     if (!cancelled) {
-      await interaction.editReply("Failed to cancel the scenario. It may have just completed.");
+      await interaction.editReply("Failed to cancel the conversation. It may have just completed.");
       return;
     }
 
-    await interaction.editReply(`Scenario cancelled in <#${targetChannel.id}>.`);
+    await interaction.editReply(`Conversation cancelled in <#${targetChannel.id}>.`);
   }
 };
 

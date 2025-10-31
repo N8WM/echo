@@ -1,0 +1,24 @@
+{
+  "name": "csc357-lab",
+  "description": "CSC 357 shell lab discussion about strtok_r",
+  "actors": {
+    "sam": {
+      "displayName": "Sam W.",
+      "avatarUrl": "https://cdn.discordapp.com/embed/avatars/1.png"
+    },
+    "jess": {
+      "displayName": "Jess K.",
+      "avatarUrl": "https://cdn.discordapp.com/embed/avatars/2.png"
+    }
+  },
+  "events": [
+    {
+      "actorId": "sam",
+      "content": "What are you using to split PATH for the CSC 357 shell lab? strtok is mangling my command args."
+    },
+    {
+      "actorId": "jess",
+      "content": "Swap to strtok_r. The grader runs some jobs in parallel and strtok isn't thread-safe."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "career-fair-prep",
+  "description": "Students planning for the engineering career fair and resume review night",
+  "actors": {
+    "jamie": {
+      "displayName": "Jamie T.",
+      "avatarUrl": "https://cdn.discordapp.com/embed/avatars/6.png"
+    },
+    "li": {
+      "displayName": "Li N.",
+      "avatarUrl": "https://cdn.discordapp.com/embed/avatars/0.png"
+    },
+    "acm": {
+      "displayName": "ACM Officer",
+      "avatarUrl": "https://cdn.discordapp.com/embed/avatars/1.png"
+    }
+  },
+  "events": [
+    {
+      "actorId": "jamie",
+      "content": "Is there anything happening this week to get ready for the career fair? I\u2019m freaking out about my resume."
+    },
+    {
+      "actorId": "li",
+      "content": "ACM\u2019s doing the resume review night again on Wednesday at 6pm in 14-252. They usually bring alumni too."
+    },
+    {
+      "actorId": "jamie",
+      "content": "Nice! Do we just show up or is there a signup?"
+    },
+    {
+      "actorId": "acm",
+      "content": "Hey all! RSVP on MustangJOBS so we can match reviewers faster. Search for \"ACM Resume Review Night\" and claim a slot. Walk-ins are welcome but you might wait."
+    },
+    {
+      "actorId": "li",
+      "content": "Also swing by the career center drop-ins in 02-107. They\u2019re doing rapid resume checks all week."
+    },
+    {
+      "actorId": "jamie",
+      "content": "Legend. I\u2019ll register tonight and try for a drop-in tomorrow."
+    },
+    {
+      "actorId": "acm",
+      "content": "Bring 3 printed copies and dress business casual. See you there!"
+    }
+  ]
+}

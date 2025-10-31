@@ -19,6 +19,9 @@
       "@config": [
         "app/config.ts"
       ],
+      "@scenarios/*": [
+        "scenarios/*"
+      ]
     },
     "target": "ES2022",
     "lib": [

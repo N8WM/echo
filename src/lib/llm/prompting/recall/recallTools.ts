@@ -1,7 +1,7 @@
-import { Tool } from "ollama";
+import { ToolFor } from "../../context/toolBinding";
 
 export class RecallTools {
-  static userQuote(ids: string[]): Tool {
+  static userQuote(ids: string[]): ToolFor<{ messageId: string }> {
     return {
       type: "function",
       function: {
@@ -15,10 +15,6 @@ export class RecallTools {
               type: "string",
               enum: ids,
               description: "The ID of the message to quote"
-            },
-            isNearAnswer: {
-              type: "boolean",
-              description: "Whether to mark this quote as \"Maybe Helpful But Not an Answer\" (default to false)"
             }
           }
         }
@@ -26,7 +22,7 @@ export class RecallTools {
     };
   }
 
-  static separator(): Tool {
+  static separator(): ToolFor {
     return {
       type: "function",
       function: {
@@ -36,7 +32,7 @@ export class RecallTools {
     };
   }
 
-  static context(): Tool {
+  static context(): ToolFor<{ content: string }> {
     return {
       type: "function",
       function: {

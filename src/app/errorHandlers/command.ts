@@ -11,7 +11,7 @@ const handler: ErrorHandler = async (error, context) => {
   if (context.type !== "command") return;
 
   Logger.error(`Command Error (${context.command.name}): ${error.message}`);
-  Logger.error(error.stack ?? "");
+  Logger.error(error.stack ?? String(error));
 
   const response = {
     content: "An error occurred while executing this command.",

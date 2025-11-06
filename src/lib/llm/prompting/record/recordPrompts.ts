@@ -3,27 +3,14 @@ import { RecordTools } from "./recordTools";
 export class RecordPrompts {
   static contextExpansion(initiatedMessage: string, messages: string) {
     return [
-      `The following messages are an excerpt from a Discord conversation. The final goal is to use relevant messages to generate a conversation topic and summary to be used to answer similar questions in the future. Your current task is to source context to form a complete concept. If you believe there may be adjacent messages missing from the excerpt that are necessary to understand the context, add to the context by calling the \`${RecordTools.needMoreContext().function.name}\` function. Otherwise, do not call any functions, and it will be assumed that all context is now accounted for. Context is likely not missing in a particular direction if messages in that direction are unrelated. Consider context missing if:`,
+      `The following messages are an excerpt from a Discord conversation. The final goal is to use relevant messages to generate a conversation topic and summary to be used to answer similar questions in the future. Your current task is to source context to form a complete concept. If you believe there may be adjacent messages missing from the excerpt that are necessary to understand the context, add to the context by calling the \`${RecordTools.needMoreContext().function.name}\` function. Otherwise, do not call any functions, and it will be assumed that all context is now accounted for. Context is likely not missing in a particular direction if messages exist in that direction that are unrelated. Consider context missing if:`,
       `- The conversation references something not explained in the current messages`,
       `- The conversation starts or ends mid-thought`,
       ``,
       `There may be occasional unrelated messages in the excerpt, but if the majority of messages are related to the topic in a particular temporal direction, it is likely that more context is needed. Context may be needed in both directions, in such a case, only worry about one direction. You will have another chance to get context in the other direction later.`,
-      `Only perform a maximum of one function call.`,
       ``,
       `Finally, if you see "<EOF />", it means there are no more messages in that direction.`,
-      ``,
-      `Initiated Message:`,
-      `${initiatedMessage}`,
-      ``,
-      `Context Excerpt Messages:`,
-      `${messages}`
-    ].join("\n");
-  }
-
-  static contextExpansionLoop(temporalDirection: string, initiatedMessage: string, messages: string) {
-    return [
-      `The following messages are the resulting extended excerpt after your call to \`${RecordTools.needMoreContext().function.name}("${temporalDirection}")\`. Please once again evaluate if there may be adjacent messages missing from the excerpt that are necessary to understand the context. If you believe more context is needed, call the \`${RecordTools.needMoreContext().function.name}\` function again. Otherwise, do not call any functions, and it will be assumed that all context is now accounted for.`,
-      `Only perform a maximum of one function call.`,
+      `You will continually be prompted to get more context in a loop until you do not make a call.`,
       ``,
       `Initiated Message:`,
       `${initiatedMessage}`,

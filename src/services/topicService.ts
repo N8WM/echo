@@ -58,7 +58,6 @@ export class TopicService extends BaseService {
 
   async mergeNewTopicInto(
     existingId: string,
-    newSummary: string,
     messages: Omit<Message, "createdAt">[]
   ) {
     const topic = await this.prisma.topic.findUnique({ where: { id: existingId } });
@@ -81,10 +80,7 @@ export class TopicService extends BaseService {
       await this.prisma.$transaction(upserts);
     }
 
-    return await this.prisma.topic.update({
-      where: { id: existingId },
-      data: { summary: newSummary }
-    });
+    return topic;
   }
 
   async getRelatedTopics(query: string, guildSnowflake: string) {

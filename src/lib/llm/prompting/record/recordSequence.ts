@@ -1,30 +1,44 @@
 import { Message as DiscordMessage } from "discord.js";
-import { Message as LLMMessage } from "ollama";
-
-import { Result } from "@lib/result";
+import { Topic } from "@prisma/client";
 
 import { LLMSession } from "../../context/sessions/llmSession";
 import { MessageSession } from "../../context/sessions/messageSession";
 import { TopicSession } from "../../context/sessions/topicSession";
+import { ToolBinding } from "../../context/toolBinding";
 import { RecordPrompts } from "./recordPrompts";
 import { RecordTools } from "./recordTools";
 
 export class RecordSequence {
   static async execute(
     discordMessage: DiscordMessage,
-    updateCb: (message: string) => Promise<unknown>,
-    loopMax: number = 15
+    updateCb: (message: string) => Promise<unknown>
   ) {
     const messageSession = new MessageSession(discordMessage);
     const topicSession = new TopicSession({ messageSession });
     const llmSession = new LLMSession();
 
-    const toolResult: LLMMessage = { role: "tool", content: "done" };
+    const bindingBuilders = {
+      needMoreContext: () => new ToolBinding(
+        RecordTools.needMoreContext(),
+        messageSession.expand.bind(messageSession)
+      ),
+      removeMessages: (ids: string[]) => new ToolBinding(
+        RecordTools.removeMessages(ids),
+        messageSession.refine.bind(messageSession)
+      ),
+      updateExistingTopic: (ids: string[]) => new ToolBinding(
+        RecordTools.updateExistingTopic(ids),
+        topicSession.updateExistingTopic.bind(topicSession)
+      ),
+      overwriteExistingTopic: (ids: string[]) => new ToolBinding(
+        RecordTools.overwriteExistingTopic(ids),
+        topicSession.overwriteExistingTopic.bind(topicSession)
+      )
+    };
 
     updateCb("Analyzing message...");
 
-    let result = await messageSession.expand("around");
-    if (!result.ok) return result;
+    await messageSession.expand({ temporalDirection: "around" });
 
     let response = await llmSession.message(
       {
@@ -34,39 +48,12 @@ export class RecordSequence {
           messageSession.serialized()
         )
       },
-      { flush: true, tools: [RecordTools.needMoreContext()] }
+      {
+        flush: true,
+        thinking: false,
+        tools: { needMoreContext: bindingBuilders.needMoreContext() }
+      }
     );
-
-    let toolCalls = response.message.tool_calls;
-    let call = toolCalls?.at(0);
-
-    let iterations = 0;
-
-    while (call && iterations++ < loopMax) {
-      updateCb(`Expanding context (${iterations})...`);
-
-      await llmSession.message(toolResult, { flush: false });
-
-      const args = call.function.arguments as { temporalDirection: "before" | "after" };
-      result = await messageSession.expand(args.temporalDirection, 5);
-
-      if (!result.ok) return result;
-
-      response = await llmSession.message(
-        {
-          role: "user",
-          content: RecordPrompts.contextExpansionLoop(
-            args.temporalDirection,
-            messageSession.initialMessage.serialized,
-            messageSession.serialized()
-          )
-        },
-        { flush: true, tools: [RecordTools.needMoreContext()] }
-      );
-
-      toolCalls = response.message.tool_calls;
-      call = toolCalls?.at(0);
-    }
 
     updateCb("Refining context...");
     llmSession.forget();
@@ -83,20 +70,11 @@ export class RecordSequence {
       },
       {
         flush: true,
-        tools: [RecordTools.removeMessages(ids)]
+        tools: { removeMessages: bindingBuilders.removeMessages(ids) }
       }
     );
 
-    toolCalls = response.message.tool_calls;
-    call = toolCalls?.at(0);
-
-    if (call) {
-      const args = call.function.arguments as { messageIds: string[] };
-      messageSession.refine(args.messageIds);
-      await llmSession.message(toolResult, { flush: false });
-    }
-
-    updateCb("Summarizing topic...");
+    updateCb("Generating topic...");
     llmSession.forget();
 
     response = await llmSession.message(
@@ -119,7 +97,7 @@ export class RecordSequence {
 
     ids = topicSession.topics.map((topic) => topic.databaseTopic.id);
 
-    response = await llmSession.message(
+    const result = await llmSession.message(
       {
         role: "user",
         content: RecordPrompts.integrationPrompt(
@@ -129,58 +107,27 @@ export class RecordSequence {
       },
       {
         flush: true,
-        tools: [
-          RecordTools.updateExistingTopic(ids),
-          RecordTools.overwriteExistingTopic(ids)
-        ]
+        tools: {
+          updateExistingTopic: bindingBuilders.updateExistingTopic(ids),
+          overwriteExistingTopic: bindingBuilders.overwriteExistingTopic(ids)
+        },
+        allowMultipleCalls: false,
+        returnValue: true
       }
     );
 
-    toolCalls = response.message.tool_calls;
-    call = toolCalls?.at(0);
-
-    if (!call) {
-      updateCb("Creating new topic...");
-      return Result.ok(await topicSession.createNewTopic());
+    if (!result) {
+      const value = await topicSession.createNewTopic();
+      updateCb("Done! Created a new topic.");
+      return value;
     }
 
-    await llmSession.message(toolResult, { flush: false });
+    const fnName = result[0];
+    const value = result[1] as Topic;
 
-    const validCalls = ["updateExistingTopic", "overwriteExistingTopic"] as const;
-    const functionName = call.function.name as typeof validCalls[number];
+    if (fnName === "overwriteExistingTopic") updateCb("Done! Replaced an old topic.");
+    else updateCb("Done! Merged with an existing topic.");
 
-    if (!validCalls.includes(functionName)) {
-      return Result.err("Function call name not recognized");
-    }
-
-    const args = call.function.arguments as { existingTopicId: string };
-
-    if (functionName === "overwriteExistingTopic") {
-      updateCb("Replacing an old topic...");
-      return Result.ok(await topicSession.overwriteExistingTopic(args.existingTopicId));
-    }
-
-    updateCb("Merging with another topic...");
-
-    await topicSession.mergeTopicMessagesWith(args.existingTopicId);
-    llmSession.forget();
-
-    response = await llmSession.message(
-      {
-        role: "user",
-        content: RecordPrompts.summarizationPrompt(
-          messageSession.initialMessage.serialized,
-          messageSession.serialized()
-        )
-      },
-      { flush: true }
-    );
-
-    const newSummary = response.message.content;
-    const updateResult = await topicSession.updateExistingTopic(newSummary);
-
-    updateCb("Finished!");
-
-    return updateResult;
+    return value;
   }
 }

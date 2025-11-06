@@ -2,6 +2,7 @@ import {
   ApplicationCommandType,
   ChannelType,
   InteractionContextType,
+  MessageFlags,
   SlashCommandBuilder,
   TextChannel
 } from "discord.js";
@@ -24,7 +25,7 @@ const handler: CommandHandler<ApplicationCommandType.ChatInput> = {
     ),
 
   async run({ interaction }) {
-    await interaction.deferReply({ ephemeral: true });
+    await interaction.deferReply({ flags: [MessageFlags.Ephemeral] });
 
     const channelOption = interaction.options.getChannel("channel") ?? interaction.channel;
 

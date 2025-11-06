@@ -1,0 +1,34 @@
+{
+  "name": "CSC 357 Filesystem Lab Clinic",
+  "description": "TA Sam walks through debugging Lab 5 file descriptor issues the night before the deadline.",
+  "events": [
+    {
+      "personaId": "alex-p",
+      "content": "Anyone else getting a segfault in Lab 5 when the shell script hits the second file copy? Mine dies right after closing the destination descriptor."
+    },
+    {
+      "personaId": "sam-w",
+      "content": "Yeah, a bunch of folks saw that tonight. Check that you're not double-closing fd 1 in the cleanup path—`close(dest_fd)` should only run once even if `dup2` fails."
+    },
+    {
+      "personaId": "jess-k",
+      "content": "Also run it under Valgrind with `--track-fds=yes`; it screamed at me when I was leaving stdin open. That helped me find a missing `close(src_fd)` after the copy loop."
+    },
+    {
+      "personaId": "maria-l",
+      "content": "If you want a reference, look at the pseudo-code in the Canvas hint PDF under \"Copying Streams Safely\". It shows the exact order Sam is describing: open -> dup -> close originals -> run command."
+    },
+    {
+      "personaId": "sam-w",
+      "content": "We're doing another drop-in tomorrow 3-5p in the Bonderson fishbowl if you want to sanity check your pipes. Bring your latest commit so we can diff quickly."
+    },
+    {
+      "personaId": "li-n",
+      "content": "And ACM is hosting a mini-workshop on advanced Valgrind flags Friday at noon in 14-235. Good follow-up if you want to dig deeper into leak suppression."
+    },
+    {
+      "personaId": "alex-p",
+      "content": "That did it - moving the close fixed the segfault. I'll swing by the fishbowl tomorrow anyway. Thanks everyone!"
+    }
+  ]
+}

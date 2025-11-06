@@ -1,8 +1,6 @@
 import { Collection, Message as DiscordMessage, Snowflake } from "discord.js";
 import type { Message as DBMessage } from "@prisma/client";
 
-import { Result } from "@lib/result";
-
 import { UserMessage } from "../serializers/messageSerializer";
 
 export class MessageSession {
@@ -43,27 +41,28 @@ export class MessageSession {
   }
 
   async expand(
-    direction: "before" | "after" | "around",
+    args: { temporalDirection: "before" | "after" | "around" },
     limit: number = 10
   ) {
-    const anchor = direction === "around"
+    const anchor = args.temporalDirection === "around"
       ? this._initialMessage
-      : direction === "before"
+      : args.temporalDirection === "before"
         ? this._messages.first()!
         : this._messages.last()!;
 
-    const result = await anchor.fetch(direction, limit);
+    const result = await anchor.fetch(args.temporalDirection, limit);
     if (!result.ok) {
-      return result;
+      return result.error;
     }
 
     result.value.forEach((message, id) => this._messages.set(id, message));
 
-    return Result.ok(this._messages);
+    return `Updated Context Excerpt Messages:\n${this.serialized()}`;
   }
 
-  refine(ids: Snowflake[]) {
-    ids.forEach((id) => this._messages.delete(id));
-    return this._messages;
+  refine(args: { messageIds: Snowflake[] }) {
+    args.messageIds.forEach((id) => this._messages.delete(id));
+
+    return `Updated Context Excerpt Messages:\n${this.serialized()}`;
   }
 }

@@ -9,6 +9,8 @@ import {
 
 import { Command } from "./command";
 
+import { Logger } from "@core/logger";
+
 /**
  * Different contexts where errors can occur
  */
@@ -43,14 +45,14 @@ export type ErrorContext
     client: Client;
   }
   | {
-      type: "task";
-      taskName: string;
-      client: Client;
-    }
+    type: "task";
+    taskName: string;
+    client: Client;
+  }
   | {
-      type: "uncaught";
-      client?: Client;
-    };
+    type: "uncaught";
+    client?: Client;
+  };
 
 /**
  * Error handler function type
@@ -90,13 +92,13 @@ export class ErrorHandlerRegistry {
       }
       catch (handlerError) {
         // Error handler itself failed - log to console as fallback
-        console.error("Error handler failed:", handlerError);
-        console.error("Original error:", error);
+        Logger.error("Error handler failed:" + handlerError);
+        Logger.error("Original error:" + error);
       }
     }
     else {
       // No handler registered - log to console as fallback
-      console.error(`Unhandled error in ${context.type} context:`, error);
+      Logger.error(`Unhandled error in ${context.type} context:` + error);
     }
   }
 

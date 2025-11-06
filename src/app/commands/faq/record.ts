@@ -1,7 +1,10 @@
 import {
   ApplicationCommandType,
+  ContainerBuilder,
   ContextMenuCommandBuilder,
-  InteractionContextType
+  InteractionContextType,
+  MessageFlags,
+  TextDisplayBuilder
 } from "discord.js";
 
 import { CommandHandler } from "@core/registry";
@@ -15,23 +18,23 @@ const handler: CommandHandler<ApplicationCommandType.Message> = {
     .setContexts(InteractionContextType.Guild),
 
   async run({ interaction }) {
-    await interaction.deferReply({ ephemeral: true });
+    await interaction.deferReply({ flags: [MessageFlags.Ephemeral] });
+    let label = new TextDisplayBuilder().setContent(`***Thinking...***`);
 
-    const stages: string[] = [];
     const update = async (message: string) => {
-      stages.push(message);
-      await interaction.editReply({ content: stages.join("\n") });
+      label = new TextDisplayBuilder().setContent(`***${message}***`);
+
+      await interaction.editReply({
+        components: [label],
+        flags: [MessageFlags.IsComponentsV2]
+      });
     };
 
     const result = await RecordSequence.execute(interaction.targetMessage, update);
+    const summary = new ContainerBuilder().addTextDisplayComponents(new TextDisplayBuilder().setContent(`**Summary**\n*${result.summary}*`));
 
-    if (!result.ok) throw result.error;
-
-    await update(`\nSummary:\n${result.value.summary}`);
-
-    await interaction.followUp({
-      content: "Topic recorded!",
-      ephemeral: true
+    await interaction.editReply({
+      components: [label, summary]
     });
   }
 };

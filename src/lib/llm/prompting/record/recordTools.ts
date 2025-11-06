@@ -1,7 +1,7 @@
-import { Tool } from "ollama";
+import { ToolFor } from "../../context/toolBinding";
 
 export class RecordTools {
-  static needMoreContext(): Tool {
+  static needMoreContext(): ToolFor<{ temporalDirection: string }> {
     return {
       type: "function",
       function: {
@@ -15,7 +15,7 @@ export class RecordTools {
               type: "string",
               enum: ["before", "after"],
               description:
-                'The temporal direction to retrieve more context from. "before" retrieves earlier messages, "after" retrieves later messages.'
+                "The temporal direction to retrieve more context from. \"before\" retrieves earlier messages, \"after\" retrieves later messages."
             }
           }
         }
@@ -23,7 +23,7 @@ export class RecordTools {
     };
   }
 
-  static removeMessages(ids: string[]): Tool {
+  static removeMessages(ids: string[]): ToolFor<{ messageIds: string[] }> {
     return {
       type: "function",
       function: {
@@ -34,7 +34,7 @@ export class RecordTools {
           required: ["messageIds"],
           properties: {
             messageIds: {
-              type: "string[]",
+              type: "array",
               enum: ids,
               description: "An array of message IDs (strings) to remove from the excerpt. Only use message IDs present in the excerpt."
             }
@@ -44,7 +44,7 @@ export class RecordTools {
     };
   }
 
-  static updateExistingTopic(ids: string[]): Tool {
+  static updateExistingTopic(ids: string[]): ToolFor<{ existingTopicId: string }> {
     return {
       type: "function",
       function: {
@@ -65,7 +65,7 @@ export class RecordTools {
     };
   }
 
-  static overwriteExistingTopic(ids: string[]): Tool {
+  static overwriteExistingTopic(ids: string[]): ToolFor<{ existingTopicId: string }> {
     return {
       type: "function",
       function: {

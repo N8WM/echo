@@ -2,6 +2,7 @@ import {
   ApplicationCommandType,
   ChannelType,
   InteractionContextType,
+  MessageFlags,
   SlashCommandBuilder,
   TextChannel
 } from "discord.js";
@@ -76,8 +77,8 @@ const handler: CommandHandler<ApplicationCommandType.ChatInput> = {
 
     const filtered = conversations.filter(({ name, description }) =>
       query.length === 0
-        || name.toLowerCase().includes(query)
-        || description?.toLowerCase().includes(query)
+      || name.toLowerCase().includes(query)
+      || description?.toLowerCase().includes(query)
     );
 
     const choices = filtered.slice(0, 25).map((conversation) => ({
@@ -91,7 +92,7 @@ const handler: CommandHandler<ApplicationCommandType.ChatInput> = {
   },
 
   async run({ interaction }) {
-    await interaction.deferReply({ ephemeral: true });
+    await interaction.deferReply({ flags: [MessageFlags.Ephemeral] });
 
     const conversationName = interaction.options.getString("conversation", true);
     const delayValue = interaction.options.getInteger("delay") ?? DEFAULT_DELAY_MS;
@@ -137,14 +138,15 @@ const handler: CommandHandler<ApplicationCommandType.ChatInput> = {
           if (now - lastProgressUpdate < 1500 && index !== total) return;
           lastProgressUpdate = now;
 
-          const personaName =
-            conversation.personas.get(personaId)?.displayName ?? personaId;
+          const personaName
+            = conversation.personas.get(personaId)?.displayName ?? personaId;
 
           try {
             await interaction.editReply(
               `Replaying **${conversation.name}** in <#${targetChannel.id}> — ${index}/${total} messages sent (latest: ${personaName}).`
             );
-          } catch (progressError) {
+          }
+          catch (progressError) {
             Logger.warn(
               `Failed to send conversation progress update: ${progressError instanceof Error ? progressError.message : String(progressError)}`
             );
@@ -156,15 +158,18 @@ const handler: CommandHandler<ApplicationCommandType.ChatInput> = {
           let message: string;
           if (completed) {
             message = `Conversation **${conversation.name}** finished in ${duration}s in <#${targetChannel.id}>.`;
-          } else if (error?.name === "ConversationRunCancelledError") {
+          }
+          else if (error?.name === "ConversationRunCancelledError") {
             message = `Conversation **${conversation.name}** was cancelled after ${duration}s in <#${targetChannel.id}>.`;
-          } else {
+          }
+          else {
             message = `Conversation **${conversation.name}** stopped with an error after ${duration}s: ${error?.message ?? "Unknown error"}`;
           }
 
           try {
             await interaction.editReply(message);
-          } catch (finishError) {
+          }
+          catch (finishError) {
             Logger.warn(
               `Failed to send conversation completion update: ${finishError instanceof Error ? finishError.message : String(finishError)}`
             );
@@ -178,7 +183,8 @@ const handler: CommandHandler<ApplicationCommandType.ChatInput> = {
           `Conversation "${conversation.name}" crashed in channel ${targetChannel.id}: ${error instanceof Error ? error.message : String(error)}`
         );
       });
-    } catch (error) {
+    }
+    catch (error) {
       const message = error instanceof Error ? error.message : String(error);
       await interaction.editReply(`Failed to start conversation: ${message}`);
     }

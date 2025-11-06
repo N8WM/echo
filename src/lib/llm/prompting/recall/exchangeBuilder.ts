@@ -11,8 +11,6 @@ import {
 } from "discord.js";
 import type { Message } from "@prisma/client";
 
-import { Result } from "@lib/result";
-
 import { TopicSession } from "../../context/sessions/topicSession";
 
 export class ExchangeBuilder {
@@ -41,9 +39,9 @@ export class ExchangeBuilder {
     return this._messages;
   }
 
-  userQuote(messageSnowflake: string, isNearAnswer: boolean = false) {
-    const message = this.messages.get(messageSnowflake);
-    if (!message) return Result.err("Invalid Message");
+  userQuote(args: { messageId: string }) {
+    const message = this.messages.get(args.messageId);
+    if (!message) return "Invalid Message";
 
     const container = new ContainerBuilder().addSectionComponents(
       new SectionBuilder()
@@ -61,12 +59,8 @@ export class ExchangeBuilder {
         )
     );
 
-    if (isNearAnswer) {
-      container.setAccentColor([180, 50, 50]);
-    }
-
     this._components.push(container);
-    return Result.ok(message);
+    return `ADDED: userQuote("${message.messageSnowflake}")`;
   }
 
   separator() {
@@ -75,10 +69,12 @@ export class ExchangeBuilder {
       .setSpacing(SeparatorSpacingSize.Large);
 
     this._components.push(separator);
+    return `ADDED: separator`;
   }
 
-  context(content: string) {
-    const context = new TextDisplayBuilder().setContent(`> ${content}`);
+  context(args: { content: string }) {
+    const context = new TextDisplayBuilder().setContent(`> ${args.content}`);
     this._components.push(context);
+    return `ADDED: context("${args.content}")`;
   }
 }

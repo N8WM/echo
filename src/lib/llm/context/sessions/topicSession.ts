@@ -1,7 +1,6 @@
 import { Collection } from "discord.js";
 
 import { ServiceManager } from "@services";
-import { Result } from "@lib/result";
 
 import { UserTopic } from "../serializers/topicSerializer";
 import { MessageSession } from "./messageSession";
@@ -12,7 +11,6 @@ export class TopicSession {
   private _messageSession?: MessageSession;
 
   private _summary?: string;
-  private _existingTopicId?: string;
 
   constructor(options: { guildSnowflake: string } | { messageSession: MessageSession }) {
     this._topics = new Collection();
@@ -32,10 +30,6 @@ export class TopicSession {
 
   get summary() {
     return this._summary;
-  }
-
-  get existingTopicId() {
-    return this._existingTopicId;
   }
 
   setNewSummary(summary: string) {
@@ -76,35 +70,25 @@ export class TopicSession {
     });
   }
 
-  async mergeTopicMessagesWith(existingTopicId: string) {
-    const databaseMessages = await ServiceManager.topic.getMessages(existingTopicId);
+  async updateExistingTopic(args: { existingTopicId: string }) {
+    const databaseMessages = await ServiceManager.topic.getMessages(args.existingTopicId);
 
-    if (!databaseMessages) {
-      return Result.err("Invalid Topic");
-    }
+    if (!databaseMessages) throw new Error("Failed to fetch existing topic messages");
 
     this._messageSession!.merge(databaseMessages);
-    this._existingTopicId = existingTopicId;
 
-    return Result.ok(null);
-  }
-
-  async updateExistingTopic(summary: string) {
     const topic = await ServiceManager.topic.mergeNewTopicInto(
-      this._existingTopicId!,
-      summary,
+      args.existingTopicId,
       this._messageSession!.messages.map((message) => message.databaseMsg)
     );
 
-    if (!topic) {
-      return Result.err("Failed to update topic");
-    }
+    if (!topic) throw new Error("Failed to merge messages into existing topic");
 
-    return Result.ok(topic);
+    return topic;
   }
 
-  async overwriteExistingTopic(existingTopicId: string) {
-    await ServiceManager.topic.deleteTopic(existingTopicId);
+  async overwriteExistingTopic(args: { existingTopicId: string }) {
+    await ServiceManager.topic.deleteTopic(args.existingTopicId);
     return await this.createNewTopic();
   }
 }

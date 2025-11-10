@@ -1,0 +1,10 @@
+{
+  "name": "hackathon-reimbursement",
+  "description": "Explains ASI reimbursement process for hackathon travel.",
+  "events": [
+    { "personaId": "acm-officer", "content": "Traveling to HackMIT? Submit the ASI reimbursement form within 10 days of returning. Max $150 per person." },
+    { "personaId": "jamie-t", "content": "Need originals or scans?" },
+    { "personaId": "acm-officer", "content": "Upload PDFs of receipts + bank statements. Keep originals until funds hit your account (usually 4 weeks)." },
+    { "personaId": "alex-p", "content": "Thanks—filling it out now." }
+  ]
+}

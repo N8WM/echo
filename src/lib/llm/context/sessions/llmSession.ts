@@ -9,7 +9,7 @@ export type ToolData<T> = {
 };
 
 export class LLMSession {
-  static model: string = "gpt-oss:20b";
+  static model: string = "gpt-oss:20b-cloud";
 
   private readonly _messages: Message[];
 
@@ -87,7 +87,8 @@ export class LLMSession {
       const response = await LLMSession.chat(
         this._messages,
         Object.values(tools ?? {}).map((t) => t.tool),
-        thinking
+        thinking,
+        { temperature: 0 }
       );
 
       // const thinking = response.message.thinking;

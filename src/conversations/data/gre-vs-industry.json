@@ -1,0 +1,10 @@
+{
+  "name": "gre-vs-industry",
+  "description": "Debate about taking the GRE while balancing industry prep.",
+  "events": [
+    { "personaId": "alex-p", "content": "Worth taking the GRE while juggling senior project? Thinking about grad school later." },
+    { "personaId": "li-n", "content": "If grad school isn’t immediate, skip it. GRE scores expire in 5 years and prep will eat your CSC 462 time." },
+    { "personaId": "dr-armando", "content": "Agreed. Focus on industry interviews now. You can prep for the GRE the summer before you apply." },
+    { "personaId": "alex-p", "content": "Makes sense. Shelving the GRE for now." }
+  ]
+}

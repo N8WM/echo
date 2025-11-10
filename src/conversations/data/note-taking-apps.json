@@ -1,0 +1,10 @@
+{
+  "name": "note-taking-apps",
+  "description": "Poll about favorite note-taking apps during the job hunt.",
+  "events": [
+    { "personaId": "alex-p", "content": "Need a note-taking app to keep track of interviews. Obsidian? Notion? Plain Google Docs?" },
+    { "personaId": "maria-l", "content": "Obsidian for offline speed + linking. I have a template with company, interviewer, and follow-up tasks." },
+    { "personaId": "jess-k", "content": "Notion database for me—syncs across devices and I can share with friends for feedback." },
+    { "personaId": "sam-w", "content": "I stay old school with a markdown repo. Whatever you pick, keep the format consistent." }
+  ]
+}

@@ -37,7 +37,6 @@ export class RecallSequence {
 
     const bindings = {
       userQuote: new ToolBinding(RecallTools.userQuote(exchange.messages.keys().toArray()), exchange.userQuote.bind(exchange)),
-      separator: new ToolBinding(RecallTools.separator(), exchange.separator.bind(exchange)),
       context: new ToolBinding(RecallTools.context(), exchange.context.bind(exchange))
     } satisfies ToolBindingRecord;
 

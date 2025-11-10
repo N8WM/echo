@@ -1,0 +1,10 @@
+{
+  "name": "coop-vs-internship-units",
+  "description": "Compares how co-op and internship credits count toward degree requirements.",
+  "events": [
+    { "personaId": "alex-p", "content": "Trying to decide between registering my summer role as a co-op (CPE 494) or an internship (CSC 400). Any difference for units?" },
+    { "personaId": "sam-w", "content": "Co-op is 12 units over the quarter and pauses financial aid requirements. CSC 400 is just 2 units and keeps you in regular status." },
+    { "personaId": "dr-armando", "content": "If you want the experience to count as a tech elective, it has to be CSC 400 with the write-up + faculty sponsor sign-off. Co-op counts as free elective." },
+    { "personaId": "alex-p", "content": "Appreciate it—I'll stick with CSC 400 for the elective credit." }
+  ]
+}

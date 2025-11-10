@@ -1,0 +1,11 @@
+{
+  "name": "study-abroad-course-mapping",
+  "description": "Advisor explains how to pre-approve CS electives taken abroad.",
+  "events": [
+    { "personaId": "alex-p", "content": "Going to Florence for a quarter. How do I make sure the CS classes transfer as major electives?" },
+    { "personaId": "maria-l", "content": "There's a \"Course Substitution Request (Study Abroad)\" form on the International Center site." },
+    { "personaId": "dr-armando", "content": "List each foreign course with the host syllabus, note which Cal Poly course you’d like it to replace, then submit to cscadvising@calpoly.edu before you depart. We review within two weeks." },
+    { "personaId": "alex-p", "content": "Does that cover labs too?" },
+    { "personaId": "dr-armando", "content": "Yes, as long as the contact hours match. Otherwise it counts as support credit." }
+  ]
+}

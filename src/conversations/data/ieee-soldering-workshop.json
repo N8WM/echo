@@ -1,0 +1,11 @@
+{
+  "name": "ieee-soldering-workshop",
+  "description": "IEEE announces safety requirements for the soldering workshop.",
+  "events": [
+    { "personaId": "jamie-t", "content": "IEEE soldering workshop sign-ups are live! Limit 25 seats. Register at https://ieee.calpoly.edu/workshops." },
+    { "personaId": "alex-p", "content": "Any prerequisites?" },
+    { "personaId": "jamie-t", "content": "Complete the lab safety quiz (link in confirmation email) and wear closed-toe shoes. We provide irons + kits." },
+    { "personaId": "sam-w", "content": "Is walk-in allowed?" },
+    { "personaId": "jamie-t", "content": "Only if someone no-shows. RSVP to lock a seat." }
+  ]
+}

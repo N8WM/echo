@@ -1,0 +1,11 @@
+{
+  "name": "blended-bsms-deadlines",
+  "description": "Students clarify deadlines and double-count policy for the blended BS+MS program.",
+  "events": [
+    { "personaId": "jess-k", "content": "When do we apply for the blended BS+MS? Heard rumors about winter deadlines." },
+    { "personaId": "maria-l", "content": "Submit the intent form by the fourth Friday of winter quarter (for fall admits). Spring cycle uses week 4 as well." },
+    { "personaId": "dr-armando", "content": "Remember you need 3 quarters left and at least a 3.0 GPA. Once admitted, you can double-count up to 12 units—usually 400-level tech electives." },
+    { "personaId": "alex-p", "content": "Do grad classes show up automatically?" },
+    { "personaId": "dr-armando", "content": "Yes, once the Grad Studies office flips your plan code. Advisors will email the list of approved double-count courses." }
+  ]
+}

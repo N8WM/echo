@@ -1,0 +1,12 @@
+{
+  "name": "stat-substitution",
+  "description": "Advising conversation about substituting STAT 350 from another college for the CSC stats requirement.",
+  "events": [
+    { "personaId": "alex-p", "content": "Has anyone successfully counted STAT 350 from the College of Science toward the CSC stats requirement? My Degree Planner still flags it." },
+    { "personaId": "jess-k", "content": "I took STAT 350 at COSAM too and it initially showed as \"support elective\". Took a few emails to fix." },
+    { "personaId": "maria-l", "content": "Advising says it’s allowed as long as the syllabus matches STAT 366 content. Fill out the Major/Support Substitution form, include the syllabus, and send it to cscadvising@calpoly.edu." },
+    { "personaId": "dr-armando", "content": "Right. The department chair signs off once they confirm hypothesis testing and regression are covered. Expect about a one-week turnaround." },
+    { "personaId": "maria-l", "content": "Don’t forget to attach proof you earned at least a C-. They’ll reject it if the transcript screenshot is missing." },
+    { "personaId": "alex-p", "content": "Awesome, I’ll submit the substitution form tonight. Thanks all!" }
+  ]
+}

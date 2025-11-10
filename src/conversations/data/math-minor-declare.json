@@ -1,0 +1,10 @@
+{
+  "name": "math-minor-declare",
+  "description": "Explains how CSC students add a math minor.",
+  "events": [
+    { "personaId": "jess-k", "content": "Who signs the math minor form if you're in CSC? Advisor or department chair?" },
+    { "personaId": "maria-l", "content": "Fill out the minor declaration on the Math website, then get your CSC faculty advisor to sign before you drop it at the Math office (25-208)." },
+    { "personaId": "dr-armando", "content": "Make sure you've completed Calc III and Linear Algebra first; otherwise they won't accept it." },
+    { "personaId": "jess-k", "content": "Cool, checking those boxes now." }
+  ]
+}

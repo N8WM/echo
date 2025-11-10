@@ -1,0 +1,10 @@
+{
+  "name": "cpt-resources",
+  "description": "International students share CPT approval resources.",
+  "events": [
+    { "personaId": "alex-p", "content": "International folks: where do you find the CPT checklist? Need to get it signed before my internship." },
+    { "personaId": "li-n", "content": "Go to https://international.calpoly.edu/cpt. There’s a PDF with the employer letter requirements + advisor signature page." },
+    { "personaId": "jamie-t", "content": "Also attend the ISSS CPT webinar—they walk through the form line by line." },
+    { "personaId": "alex-p", "content": "Awesome, thanks for the link." }
+  ]
+}

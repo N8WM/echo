@@ -1,0 +1,11 @@
+{
+  "name": "csc202-partner-logistics",
+  "description": "Clarifies partner swap rules and deadlines in CSC 202.",
+  "events": [
+    { "personaId": "jess-k", "content": "Our CSC 202 partner keeps missing labs. Can we switch teams mid-quarter?" },
+    { "personaId": "sam-w", "content": "Yes, but only during the first two weeks. After that you need instructor approval." },
+    { "personaId": "dr-armando", "content": "Email the lab coordinator with both partners CC’d. Provide evidence (missed commits, attendance). They’ll approve a swap or solo grading plan within 48 hours." },
+    { "personaId": "alex-p", "content": "Do we still submit one repo while waiting?" },
+    { "personaId": "dr-armando", "content": "Correct. Keep pushing to the shared repo until the coordinator tells you otherwise; they’ll split grades retroactively if needed." }
+  ]
+}

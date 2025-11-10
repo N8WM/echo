@@ -1,0 +1,10 @@
+{
+  "name": "tutoring-center-hours",
+  "description": "Clarifies tutoring center drop-in hours for CSC 123.",
+  "events": [
+    { "personaId": "alex-p", "content": "Do we know the updated tutoring center hours for CSC 123? The website still shows fall times." },
+    { "personaId": "maria-l", "content": "Spring hours just changed: Mon/Wed 1-5 p.m., Tue/Thu 10-2 p.m. in 14-302. Fridays are virtual only." },
+    { "personaId": "jess-k", "content": "You can still book a zoom slot via https://csc-tutoring.calpoly.edu if the in-person seats fill up." },
+    { "personaId": "alex-p", "content": "Thanks! Dropping by tomorrow after lab." }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "algorithms-midterm-study",
+  "description": "Scheduling a study group for the Algorithms II midterm.",
+  "events": [
+    { "personaId": "jess-k", "content": "Need to schedule another Algorithms II study group—midterm is next Thursday. When works?" },
+    { "personaId": "alex-p", "content": "Monday 7-9 p.m. works if we grab room 14-238." },
+    { "personaId": "maria-l", "content": "I'll set up a Doodle poll so we can include the remote folks. Vote by tonight and I'll book whichever slot wins." },
+    { "personaId": "sam-w", "content": "Please include one morning slot; some of us TA at night." },
+    { "personaId": "maria-l", "content": "Poll posted: https://doodle.com/algos-midterm. Vote vote vote." }
+  ]
+}

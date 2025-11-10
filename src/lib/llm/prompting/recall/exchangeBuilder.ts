@@ -5,8 +5,6 @@ import {
   ContainerBuilder,
   MessageCreateOptions,
   SectionBuilder,
-  SeparatorBuilder,
-  SeparatorSpacingSize,
   TextDisplayBuilder
 } from "discord.js";
 import type { Message } from "@prisma/client";
@@ -61,15 +59,6 @@ export class ExchangeBuilder {
 
     this._components.push(container);
     return `ADDED: userQuote("${message.messageSnowflake}")`;
-  }
-
-  separator() {
-    const separator = new SeparatorBuilder()
-      .setDivider(false)
-      .setSpacing(SeparatorSpacingSize.Large);
-
-    this._components.push(separator);
-    return `ADDED: separator`;
   }
 
   context(args: { content: string }) {

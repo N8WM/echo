@@ -22,16 +22,6 @@ export class RecallTools {
     };
   }
 
-  static separator(): ToolFor {
-    return {
-      type: "function",
-      function: {
-        name: "separator",
-        description: "Add a separator/divider line to visually distinguish the following quote(s) from the previous one(s) (optional, for easier reading)"
-      }
-    };
-  }
-
   static context(): ToolFor<{ content: string }> {
     return {
       type: "function",

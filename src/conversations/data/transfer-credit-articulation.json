@@ -1,0 +1,10 @@
+{
+  "name": "transfer-credit-articulation",
+  "description": "Students walk through articulating a community college course not listed on ASSIST.",
+  "events": [
+    { "personaId": "alex-p", "content": "Taking CS 221 at Foothill this summer, but it's not on ASSIST. How do I know if it transfers?" },
+    { "personaId": "maria-l", "content": "Email articulations@calpoly.edu with the syllabus and course outline. They’ll tell you if it maps to CSC 202 or becomes support credit." },
+    { "personaId": "sam-w", "content": "Also ask Foothill for a course description PDF, not just the catalog blurb. Articulation needs topic-level detail." },
+    { "personaId": "alex-p", "content": "Got it—will send both tonight." }
+  ]
+}

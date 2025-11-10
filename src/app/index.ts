@@ -21,7 +21,8 @@ async function main() {
     intents: config.intents
   });
 
-  await LLMSession.pullModel();
+  // await LLMSession.pullModel();
+  // TODO: uncomment the line above once 503 errors are resolved
   InterfaceManager.init(client);
 
   // Initialize managers

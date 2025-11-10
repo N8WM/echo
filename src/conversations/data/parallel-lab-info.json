@@ -1,0 +1,9 @@
+{
+  "name": "parallel-lab-info",
+  "description": "Promo for the parallel computing lab info session.",
+  "events": [
+    { "personaId": "riley-d", "content": "Parallel Lab info session this Friday 11 a.m. in 186-124. We'll cover research topics + GPU account approvals." },
+    { "personaId": "alex-p", "content": "Do we need to apply beforehand?" },
+    { "personaId": "riley-d", "content": "No, just bring your resume and questions. If you want cluster access, fill out the form we hand out at the session." }
+  ]
+}

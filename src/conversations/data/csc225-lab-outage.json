@@ -1,0 +1,11 @@
+{
+  "name": "csc225-lab-outage",
+  "description": "Faculty explain how to keep working while the physical lab machines are offline.",
+  "events": [
+    { "personaId": "nate-h", "content": "Anyone else getting kicked out of the 225 lab machines? Need to finish the bitwise lab tonight." },
+    { "personaId": "jamie-t", "content": "Yep, whole lab went down after a power blip." },
+    { "personaId": "alex-p", "content": "Do we just wait it out?" },
+    { "personaId": "dr-armando", "content": "SSH into unix.csc.calpoly.edu with your Cal Poly credentials. It has the same toolchain. Save everything under ~/csc225 and push with git as usual. Physical lab reopens at 8 a.m. tomorrow." },
+    { "personaId": "nate-h", "content": "Bless. Remote login worked—back on track." }
+  ]
+}

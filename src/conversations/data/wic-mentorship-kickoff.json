@@ -1,0 +1,9 @@
+{
+  "name": "wic-mentorship-kickoff",
+  "description": "WiC shares the mentorship kickoff agenda and Notion hub link.",
+  "events": [
+    { "personaId": "maria-l", "content": "WiC Mentorship kickoff is Tuesday 5 p.m. in 14-252! Agenda: icebreakers, goal-setting, then breakout chats." },
+    { "personaId": "jess-k", "content": "Will resources be posted somewhere?" },
+    { "personaId": "maria-l", "content": "Yep, everything lives in the Notion hub: https://wic.notion.site/mentorship. We'll add meeting notes there too." }
+  ]
+}

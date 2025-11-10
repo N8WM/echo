@@ -1,0 +1,11 @@
+{
+  "name": "multiple-internship-offers",
+  "description": "Mentors discuss handling multiple offers and deadline extensions.",
+  "events": [
+    { "personaId": "alex-p", "content": "I have two internship offers with conflicting deadlines. What’s the etiquette for asking an extension?" },
+    { "personaId": "li-n", "content": "Reach out to the recruiter before the deadline, explain you’re finalizing decisions, and request a one-week extension." },
+    { "personaId": "sam-w", "content": "Template: thank them, mention you’re comparing opportunities, and ask if they can extend to <date>. Most companies will if you’re upfront." },
+    { "personaId": "jess-k", "content": "Save the confirmation email in case you need proof of the new date." },
+    { "personaId": "alex-p", "content": "Thanks! Drafting the email now." }
+  ]
+}

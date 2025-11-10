@@ -1,0 +1,11 @@
+{
+  "name": "csc349-prereqs",
+  "description": "Thread covering the exact prerequisites and override workflow for CSC 349.",
+  "events": [
+    { "personaId": "alex-p", "content": "Can someone confirm the prereqs for CSC 349 next quarter? The catalog site is confusing and I'm trying to plan my schedule." },
+    { "personaId": "sam-w", "content": "You need to have both CSC 248 and CSC 357 completed with a C- or better before registration opens. The Registrar cross-checks automatically, so block out a retake if either is in progress." },
+    { "personaId": "nate-h", "content": "If you're taking 357 right now, your best bet is to grab a backup elective because the system won't issue a permission number until grades post." },
+    { "personaId": "maria-l", "content": "If you finished everything but the system still blocks you, email cpslo-reg@calpoly.edu with your unofficial transcript and ask for a CSC 349 override code. Copy the department office so they can verify." },
+    { "personaId": "alex-p", "content": "Perfect, thanks! I'll keep 248/357 on my checklist and watch for that override email if I still get blocked." }
+  ]
+}

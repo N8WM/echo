@@ -1,0 +1,11 @@
+{
+  "name": "senior-project-sequence",
+  "description": "Students clarify when the CSC 461/462 sequence starts and how long it runs.",
+  "events": [
+    { "personaId": "jess-k", "content": "When do people usually start the CSC 461/462 senior project? Trying to line it up with internship plans." },
+    { "personaId": "sam-w", "content": "Most folks enroll in CSC 461 about two quarters before graduation. It's one quarter of planning (461) and one quarter of implementation (462)." },
+    { "personaId": "jamie-t", "content": "If you’re on a 4-year path, plan for fall+winter or winter+spring. Summer offerings exist but fill instantly." },
+    { "personaId": "dr-armando", "content": "Remember you must hit 180 units before 462. Advisors suggest keeping the quarter at 12 units max so you have bandwidth for the project." },
+    { "personaId": "jess-k", "content": "Got it. I'll start 461 in winter so 462 wraps right before graduation." }
+  ]
+}

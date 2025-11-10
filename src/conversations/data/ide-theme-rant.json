@@ -1,0 +1,10 @@
+{
+  "name": "ide-theme-rant",
+  "description": "Light-hearted rant about IDE themes before finals week.",
+  "events": [
+    { "personaId": "alex-p", "content": "Finals week tradition: switch IDE themes to anything neon to stay awake. Who's with me?" },
+    { "personaId": "jess-k", "content": "My retinas say no. One dark theme to rule them all." },
+    { "personaId": "nate-h", "content": "I ship my dotfiles to remind myself not to change themes until after deadlines 😂." },
+    { "personaId": "sam-w", "content": "As long as git diff doesn’t show theme changes, do whatever keeps you coding." }
+  ]
+}

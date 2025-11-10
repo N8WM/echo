@@ -1,0 +1,11 @@
+{
+  "name": "csc248-pointers-cram",
+  "description": "Students coordinate a late-night cram session for CSC 248 pointers review.",
+  "events": [
+    { "personaId": "alex-p", "content": "Anyone down for a quick pointers review tonight? I'm blanking on pointer arithmetic before tomorrow's quiz." },
+    { "personaId": "jess-k", "content": "I'm in. Let's grab the Bonderson fishbowl at 8 p.m.—whiteboard + power outlets." },
+    { "personaId": "nate-h", "content": "I'll bring the pointer bingo sheet from last year. Also snacks (chips + Red Vines)." },
+    { "personaId": "sam-w", "content": "Drop your diagrams in this thread afterward so people who can't come still get the cheat sheets." },
+    { "personaId": "alex-p", "content": "Perfect! See you at 8. I'll post pics of the board." }
+  ]
+}

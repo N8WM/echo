@@ -1,0 +1,11 @@
+{
+  "name": "recruiting-timeline",
+  "description": "Li N. outlines the on-campus recruiting calendar and prep resources.",
+  "events": [
+    { "personaId": "jess-k", "content": "When do we start seeing fall recruiting events? Trying to plan mock interviews." },
+    { "personaId": "li-n", "content": "Career fair apps open the first week of September. Companies start info sessions two weeks later and run through mid-October." },
+    { "personaId": "sam-w", "content": "ACM mock interviews start the Monday after Week 1—sign-ups drop in #career." },
+    { "personaId": "li-n", "content": "Also hit https://careers.calpoly.edu/calendar for RSVP links, and keep your Handshake profile updated before Labor Day." },
+    { "personaId": "jess-k", "content": "Appreciate it. Adding those dates to my planner." }
+  ]
+}

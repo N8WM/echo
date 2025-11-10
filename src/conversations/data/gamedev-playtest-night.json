@@ -1,0 +1,10 @@
+{
+  "name": "gamedev-playtest-night",
+  "description": "Game dev club announces playtest night logistics.",
+  "events": [
+    { "personaId": "alex-p", "content": "Is game dev playtest night happening this month?" },
+    { "personaId": "jamie-t", "content": "Yep! Next Thursday 6 p.m. in ATL. Submit your build + assets by Tuesday so we can load them on the showcase PCs." },
+    { "personaId": "sam-w", "content": "Spectators welcome?" },
+    { "personaId": "jamie-t", "content": "Always. Bring feedback cards if you want structured notes." }
+  ]
+}

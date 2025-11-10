@@ -1,0 +1,10 @@
+{
+  "name": "credit-nocredit-rules",
+  "description": "Clarifies which CSC electives allow Credit/No Credit grading.",
+  "events": [
+    { "personaId": "jess-k", "content": "Can we take CSC electives CR/NC? Thinking of lightening the load." },
+    { "personaId": "maria-l", "content": "Only special topics (29x) and internships allow CR/NC. Core tech electives must stay letter graded." },
+    { "personaId": "dr-armando", "content": "Also remember: maximum 16 units of CR/NC apply to your degree, and none can cover GE Area A-D." },
+    { "personaId": "jess-k", "content": "Makes sense. Guess I'm keeping CSC 430 letter graded." }
+  ]
+}

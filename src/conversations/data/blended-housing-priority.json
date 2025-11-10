@@ -1,0 +1,10 @@
+{
+  "name": "blended-housing-priority",
+  "description": "Discusses housing priority forms for students entering the blended program.",
+  "events": [
+    { "personaId": "jess-k", "content": "Do blended students keep housing priority once they flip to grad status?" },
+    { "personaId": "maria-l", "content": "Yes, but you have to submit the Graduate Housing Intent form before May 1. It's on the Housing portal." },
+    { "personaId": "sam-w", "content": "If you miss the deadline they put you on the general waitlist, so set a reminder." },
+    { "personaId": "jess-k", "content": "Noted! Form going in tonight." }
+  ]
+}

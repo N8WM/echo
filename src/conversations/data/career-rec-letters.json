@@ -1,0 +1,11 @@
+{
+  "name": "career-rec-letters",
+  "description": "Career center and faculty guidelines for requesting recommendation letters.",
+  "events": [
+    { "personaId": "jamie-t", "content": "Need rec letters for an NSF internship. How far out should I ask professors?" },
+    { "personaId": "li-n", "content": "Career Center recommends three to four weeks minimum." },
+    { "personaId": "dr-armando", "content": "Exactly. Send your resume, transcript, and a bullet list of traits to highlight. Include the due date and submission links." },
+    { "personaId": "alex-p", "content": "Should we follow up if we don’t hear back?" },
+    { "personaId": "dr-armando", "content": "Give a polite reminder one week before the deadline." }
+  ]
+}

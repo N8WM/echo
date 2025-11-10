@@ -1,0 +1,11 @@
+{
+  "name": "laptop-thermal-tips",
+  "description": "Students swap fixes for laptops throttling during large builds.",
+  "events": [
+    { "personaId": "nate-h", "content": "My laptop keeps throttling when compiling the CMake monster in 357. Fans sound like a jet." },
+    { "personaId": "jamie-t", "content": "Prop the back up with a book and run a cheap USB fan underneath. Drops temps ~10°C for me." },
+    { "personaId": "sam-w", "content": "Also set `-j4` instead of `-j16` when running make. You’ll add a minute but keep the CPU below the throttle point." },
+    { "personaId": "alex-p", "content": "Thermal paste refresh helped mine but that's weekend work." },
+    { "personaId": "nate-h", "content": "Going to try the fan + lower job count. Thanks all." }
+  ]
+}

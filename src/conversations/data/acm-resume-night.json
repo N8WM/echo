@@ -1,0 +1,10 @@
+{
+  "name": "acm-resume-night",
+  "description": "ACM shares logistics for the resume review night.",
+  "events": [
+    { "personaId": "acm-officer", "content": "Resume Review Night moved to Thursday 6 p.m. in 186-C200 due to a room conflict. RSVP at https://acm.calpoly.edu/resume." },
+    { "personaId": "jamie-t", "content": "Do we need printed copies?" },
+    { "personaId": "acm-officer", "content": "Bring two printed copies + a PDF on your laptop. We'll have recruiters from Splunk and ServiceNow." },
+    { "personaId": "alex-p", "content": "Thanks for the heads up!" }
+  ]
+}

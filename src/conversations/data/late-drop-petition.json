@@ -1,0 +1,11 @@
+{
+  "name": "late-drop-petition",
+  "description": "Department chair outlines the process for retroactive course drops.",
+  "events": [
+    { "personaId": "jess-k", "content": "Friend is trying to drop CSC 349 after the deadline due to medical stuff. What’s the process?" },
+    { "personaId": "maria-l", "content": "They’ll need the Late/Retroactive Withdrawal Petition." },
+    { "personaId": "dr-armando", "content": "Submit the petition with supporting documentation (doctor’s note, etc.) to the Registrar and CC the department chair. We only approve if the circumstance prevented participation during the affected term." },
+    { "personaId": "sam-w", "content": "Turnaround is about 10 business days. Meanwhile the class still shows on the portal." },
+    { "personaId": "jess-k", "content": "Thanks, we’ll gather the docs first." }
+  ]
+}

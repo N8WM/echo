@@ -1,0 +1,11 @@
+{
+  "name": "acm-industry-panel",
+  "description": "ACM officer explains how to submit questions and access recordings for the panel night.",
+  "events": [
+    { "personaId": "jess-k", "content": "Anyone know if the ACM industry panel will take live questions or only pre-submitted?" },
+    { "personaId": "acm-officer", "content": "Submit questions via https://acmcalpoly.typeform.com/panel by Wed 5 p.m. We group similar ones and still leave 10 minutes for live Q&A." },
+    { "personaId": "jamie-t", "content": "Will there be a recording?" },
+    { "personaId": "acm-officer", "content": "Yes! Slides plus the YouTube link hit #clubs-resources within 48 hours." },
+    { "personaId": "jess-k", "content": "Perfect, thanks." }
+  ]
+}

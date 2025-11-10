@@ -1,0 +1,10 @@
+{
+  "name": "cyber-ctf-practice",
+  "description": "Cybersecurity club coordinates a CTF practice session.",
+  "events": [
+    { "personaId": "sam-w", "content": "Cyber club running a mini-CTF Wednesday 7 p.m. in 14-232. Teams of 3." },
+    { "personaId": "alex-p", "content": "Any prep material?" },
+    { "personaId": "sam-w", "content": "Grab the starter bundle here: https://calpolycyber.club/ctf-kit. Includes Burp configs + reversing cheatsheets." },
+    { "personaId": "alex-p", "content": "Downloading now, thanks!" }
+  ]
+}

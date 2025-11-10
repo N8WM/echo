@@ -1,0 +1,10 @@
+{
+  "name": "coop-conversion-success",
+  "description": "Students share stories about converting co-ops to full-time offers.",
+  "events": [
+    { "personaId": "sam-w", "content": "For those who converted co-ops to full-time offers, what sealed the deal?" },
+    { "personaId": "jamie-t", "content": "Weekly sync with my manager + kept a brag doc. Sent a wrap-up deck during week 10 showing impact." },
+    { "personaId": "li-n", "content": "Also ask early if there’s headcount. HR told me to expect an answer by week 8, so I nudged politely until they mailed the offer." },
+    { "personaId": "sam-w", "content": "Got it. Brag doc starts today." }
+  ]
+}

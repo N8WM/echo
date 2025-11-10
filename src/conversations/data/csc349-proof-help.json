@@ -1,0 +1,11 @@
+{
+  "name": "csc349-proof-help",
+  "description": "Students share tips and resources for the CSC 349 proof assignment.",
+  "events": [
+    { "personaId": "alex-p", "content": "Stuck on the last induction proof for HW4. Any resources besides the textbook?" },
+    { "personaId": "nate-h", "content": "Check the Canvas \"Proof Clinic\" PDF from week 3—it walks through strong induction format." },
+    { "personaId": "dr-armando", "content": "Also rewatch the recorded lecture from 4/10. I annotate the base step and induction hypothesis the grader expects." },
+    { "personaId": "maria-l", "content": "I keep a Google Doc with sample proofs (anonymized). DM me if you want it." },
+    { "personaId": "alex-p", "content": "Thanks! I’ll rewatch that lecture tonight." }
+  ]
+}

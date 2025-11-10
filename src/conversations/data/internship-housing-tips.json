@@ -1,0 +1,10 @@
+{
+  "name": "internship-housing-tips",
+  "description": "Students trade Bay Area sublet advice and share budget spreadsheets.",
+  "events": [
+    { "personaId": "jess-k", "content": "Need housing tips for a summer internship in Sunnyvale. Trying not to spend my entire stipend." },
+    { "personaId": "li-n", "content": "Try fb.com/groups/bayareasummerhousing. Also check out company bulletin boards—some offer $1500 housing stipends if you ask." },
+    { "personaId": "jamie-t", "content": "Dropping the spreadsheet we used last summer: https://tinyurl.com/csc-housing-budget. Tabs for utilities + commute costs." },
+    { "personaId": "jess-k", "content": "You’re the best. Diving in now." }
+  ]
+}

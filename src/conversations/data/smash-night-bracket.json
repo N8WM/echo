@@ -1,0 +1,9 @@
+{
+  "name": "smash-night-bracket",
+  "description": "Off-topic Smash night bracket banter.",
+  "events": [
+    { "personaId": "nate-h", "content": "Smash night tonight in the senior lounge. Bracket starts at 9 p.m.—double elim." },
+    { "personaId": "alex-p", "content": "I only play Kirby but I'm in." },
+    { "personaId": "sam-w", "content": "Winner gets bragging rights and the plastic trophy from last year 😂." }
+  ]
+}

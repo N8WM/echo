@@ -1,10 +1,15 @@
 import { setTimeout as sleep } from "node:timers/promises";
 
-import { TextChannel, WebhookClient, Webhook } from "discord.js";
+import {
+  Message,
+  TextChannel,
+  WebhookClient,
+  Webhook
+} from "discord.js";
 
 import { Logger } from "@core/logger";
 
-import { LoadedConversation, ConversationPersona } from "./types";
+import { LoadedConversation, ConversationPersona, ConversationEvent } from "./types";
 
 const activeRuns = new Map<string, ConversationRunInternal>();
 
@@ -30,6 +35,11 @@ export type ConversationRunOptions = {
   personaCatalog: Map<string, ConversationPersona>;
   onProgress?: (progress: ConversationRunProgress) => Promise<void> | void;
   onFinish?: (result: ConversationRunResult) => Promise<void> | void;
+  onMessage?: (info: {
+    eventIndex: number;
+    event: ConversationEvent;
+    message: Message;
+  }) => Promise<void> | void;
 };
 
 type ConversationRunInternal = {
@@ -97,7 +107,8 @@ async function preparePersonaClients(
     if (!persona) {
       try {
         await webhook.delete("Removing unmanaged conversation persona webhook");
-      } catch (error) {
+      }
+      catch (error) {
         Logger.warn(`Failed to delete unknown conversation webhook: ${String(error)}`);
       }
       continue;
@@ -106,7 +117,8 @@ async function preparePersonaClients(
     if (seenPersonaIds.has(persona.id)) {
       try {
         await webhook.delete("Removing duplicate conversation persona webhook");
-      } catch (error) {
+      }
+      catch (error) {
         Logger.warn(`Failed to delete duplicate conversation webhook: ${String(error)}`);
       }
       continue;
@@ -121,7 +133,8 @@ async function preparePersonaClients(
     if (!webhook.token) {
       try {
         await webhook.delete("Conversation persona webhook missing token");
-      } catch (error) {
+      }
+      catch (error) {
         Logger.warn(`Failed to delete tokenless conversation webhook: ${String(error)}`);
       }
       continue;
@@ -143,7 +156,8 @@ async function preparePersonaClients(
         name: persona.displayName,
         reason: `Conversation persona ${persona.id} requested by ${requestedBy}`
       });
-    } catch (error) {
+    }
+    catch (error) {
       const message = error instanceof Error ? error.message : String(error);
       throw new Error(
         `Failed to create webhook for persona "${persona.displayName}": ${message}`
@@ -172,7 +186,8 @@ async function cleanupRun(channelId: string, run?: ConversationRunInternal) {
     for (const { client } of run.personaClients.values()) {
       client.destroy();
     }
-  } catch (error) {
+  }
+  catch (error) {
     Logger.warn(`Failed to destroy webhook client: ${String(error)}`);
   }
 
@@ -235,10 +250,19 @@ export async function startConversationRun(options: ConversationRunOptions) {
           continue;
         }
 
-        await personaClient.client.send({
+        const rawMessage = await personaClient.client.send({
           content: event.content,
           username: persona.displayName,
           avatarURL: persona.avatarUrl
+        });
+        const sentMessage = rawMessage instanceof Message
+          ? rawMessage
+          : await channel.messages.fetch(rawMessage.id);
+
+        await options.onMessage?.({
+          eventIndex: index + 1,
+          event,
+          message: sentMessage
         });
 
         await options.onProgress?.({
@@ -254,7 +278,8 @@ export async function startConversationRun(options: ConversationRunOptions) {
         conversationName: conversation.name,
         completed: true
       });
-    } catch (error) {
+    }
+    catch (error) {
       const runError = error instanceof Error ? error : new Error(String(error));
       if (runError.name !== "ConversationRunCancelledError") {
         Logger.error(
@@ -270,7 +295,8 @@ export async function startConversationRun(options: ConversationRunOptions) {
       });
 
       throw runError;
-    } finally {
+    }
+    finally {
       await cleanupRun(channel.id, run);
     }
   };

@@ -1,0 +1,12 @@
+{
+  "name": "wrong-section-switch",
+  "description": "Walkthrough of the process to move into a different section after enrolling in the wrong CRN.",
+  "events": [
+    { "personaId": "alex-p", "content": "I accidentally added the 7am section of CSC 225. Anyone know how to switch now that it's after add/drop?" },
+    { "personaId": "maria-l", "content": "Step 1: email the instructor of the section you want with your Poly ID and explain the mistake. Ask for approval to swap." },
+    { "personaId": "jess-k", "content": "Make sure they explicitly say \"approved to move into CRN ####\". You’ll need that wording for the Registrar." },
+    { "personaId": "sam-w", "content": "Once you have the approval email, submit the change via the Student Center \"Class Adjustment Petition\". Upload the professor’s email as documentation." },
+    { "personaId": "dr-armando", "content": "Registrar processes it in 1–2 business days. Until then you’re still on the 7am roster, so keep attending to avoid being dropped." },
+    { "personaId": "alex-p", "content": "Thanks! I'll email the noon section prof right now." }
+  ]
+}

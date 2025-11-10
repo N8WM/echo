@@ -1,0 +1,9 @@
+{
+  "name": "petr-cheatsheet-reminder",
+  "description": "Reminder about Petr's unofficial cheat sheet updates.",
+  "events": [
+    { "personaId": "sam-w", "content": "FYI Petr just pushed the Week 6 cheat sheet update to https://github.com/petr-csc-resources." },
+    { "personaId": "nate-h", "content": "Bless that repo. The new graph traversal note is 🔥." },
+    { "personaId": "alex-p", "content": "Download before the exam—they usually lock the repo day-of." }
+  ]
+}

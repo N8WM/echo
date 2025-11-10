@@ -1,0 +1,11 @@
+{
+  "name": "ml-game-elective-referral",
+  "description": "Students try to find a machine-learning-for-games elective; conversation ends with a referral.",
+  "events": [
+    { "personaId": "alex-p", "content": "Is there an elective focused on ML for game development? I only see the generic AI listing on the flowchart." },
+    { "personaId": "jess-k", "content": "Closest class I’ve seen is CSC 482 (Game Engine Dev) but it barely touches ML." },
+    { "personaId": "jamie-t", "content": "Some people use EE 407 (Neural Nets) as a stand-in, but you have to petition for major elective credit." },
+    { "personaId": "li-n", "content": "Ping me or email li.n@acm.calpoly.edu. We keep a list of instructors willing to supervise ML-for-games independent studies each spring." },
+    { "personaId": "alex-p", "content": "Cool, will reach out. Thanks!" }
+  ]
+}

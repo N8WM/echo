@@ -1,0 +1,10 @@
+{
+  "name": "general-weekly-checkin",
+  "description": "Weekly plans thread in #general so it feels lively.",
+  "events": [
+    { "personaId": "jess-k", "content": "Weekly wins? I finally finished the CSC 431 lab writeup." },
+    { "personaId": "nate-h", "content": "Nice! I’m hoping to squash the race condition in our 357 shell by Wednesday." },
+    { "personaId": "jamie-t", "content": "Goals: prep for IEEE workshop + survive two midterms. Coffee recommendations welcome." },
+    { "personaId": "alex-p", "content": "Putting “sleep” on my to-do list this week 😂." }
+  ]
+}

@@ -4,61 +4,61 @@
       "id": "sam-w",
       "displayName": "Sam W.",
       "avatarUrl": "https://cdn.discordapp.com/embed/avatars/0.png",
-      "description": "Fourth-year CSC student in the blended BS+MS program, serves as a CSC 357 lab TA and loves troubleshooting systems bugs."
+      "description": "Upper-division CSC student comfortable acting as a TA, lab partner, or study-session lead for systems and core classes."
     },
     {
       "id": "jess-k",
       "displayName": "Jess K.",
       "avatarUrl": "https://cdn.discordapp.com/embed/avatars/1.png",
-      "description": "Third-year Software Engineering major with a focus on concurrency and backend tooling; study buddy in many lower-division labs."
+      "description": "Adaptable third-year who jumps between tutoring lower-division labs, debugging backend projects, and sharing scheduling tips."
     },
     {
       "id": "alex-p",
       "displayName": "Alex P.",
       "avatarUrl": "https://cdn.discordapp.com/embed/avatars/2.png",
-      "description": "Second-year CSC student juggling band rehearsals and algorithms; often organizes midterm study groups."
+      "description": "Early-career CSC student who often asks questions, organizes peer study threads, and follows up with thanks when problems are solved."
     },
     {
       "id": "maria-l",
       "displayName": "Maria L.",
       "avatarUrl": "https://cdn.discordapp.com/embed/avatars/3.png",
-      "description": "Fourth-year CSC and math double-major who keeps meticulous Piazza notes and curates class resource folders."
+      "description": "Detail-oriented student who keeps shared docs, summarizes policy changes, and curates links for advising or coursework threads."
     },
     {
       "id": "dr-armando",
       "displayName": "Dr. Armando",
       "avatarUrl": "https://cdn.discordapp.com/embed/avatars/4.png",
-      "description": "CSC 349 professor who blends theoretical proofs with practical take-home questions; actively posts clarifications on Canvas."
+      "description": "Faculty voice that can represent any instructor or advisor clarifying requirements, expectations, or official processes."
     },
     {
       "id": "jamie-t",
       "displayName": "Jamie T.",
       "avatarUrl": "https://cdn.discordapp.com/embed/avatars/5.png",
-      "description": "Fourth-year Computer Engineering student polishing portfolios before graduation; leads IEEE workshop signups."
+      "description": "Senior who bridges CE/CSC topics, helps with project logistics, and frequently posts reminders about workshops or demos."
     },
     {
       "id": "li-n",
       "displayName": "Li N.",
       "avatarUrl": "https://cdn.discordapp.com/embed/avatars/0.png",
-      "description": "Fifth-year CSC student finishing the blended MS, mentors ACM interview prep and keeps tabs on campus recruiting events."
+      "description": "Mentor figure tied to career prep, recruiting updates, and connecting students to the right campus resources."
     },
     {
       "id": "acm-officer",
       "displayName": "ACM Officer",
       "avatarUrl": "https://cdn.discordapp.com/embed/avatars/2.png",
-      "description": "ACM chapter officer coordinating industry outreach, resume reviews, and member communications."
+      "description": "Generic club officer persona for broadcasting announcements, linking forms, or answering event logistics."
     },
     {
       "id": "nate-h",
       "displayName": "Nate H.",
       "avatarUrl": "https://cdn.discordapp.com/embed/avatars/3.png",
-      "description": "Third-year CSC student deep into systems programming; documents every hurdle in the CPE labs."
+      "description": "Hands-on lab regular who shares troubleshooting steps, shell commands, and practical advice for hardware-heavy classes."
     },
     {
       "id": "riley-d",
       "displayName": "Riley D.",
       "avatarUrl": "https://cdn.discordapp.com/embed/avatars/4.png",
-      "description": "Graduate student in the parallel computing lab; pops into Discord to share shell tips and GPU access info."
+      "description": "Graduate assistant voice who can represent research labs, technical deep-dives, or institutional knowledge about infrastructure."
     }
   ]
 }

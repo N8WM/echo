@@ -1,0 +1,10 @@
+{
+  "name": "wic-mentorship-application",
+  "description": "WiC outlines the application requirements for mentees.",
+  "events": [
+    { "personaId": "alex-p", "content": "How do I apply for the WiC mentorship program this quarter?" },
+    { "personaId": "maria-l", "content": "Go to https://wic.calpoly.edu/mentorship and fill out the mentee form by Jan 25 at 11:59 p.m. Include your focus areas so we can match you." },
+    { "personaId": "jess-k", "content": "Do we pick mentors ourselves?" },
+    { "personaId": "maria-l", "content": "WiC pairs you based on availability and interests. Matches go out the following Monday." }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "summer-ge-at-cuesta",
+  "description": "Advice on taking GE classes at Cuesta College over the summer.",
+  "events": [
+    { "personaId": "alex-p", "content": "Worth taking GE Area D at Cuesta over summer to lighten fall? Any paperwork?" },
+    { "personaId": "jess-k", "content": "Do it. Just double-check ASSIST so it maps to the right Area D course number." },
+    { "personaId": "maria-l", "content": "After you finish, send the official transcript directly to Cal Poly Admissions. Takes ~2 weeks to post." },
+    { "personaId": "alex-p", "content": "Sweet. Registering tonight then." }
+  ]
+}

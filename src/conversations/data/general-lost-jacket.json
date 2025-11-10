@@ -1,0 +1,9 @@
+{
+  "name": "general-lost-jacket",
+  "description": "Lost-and-found style chatter for the general channel.",
+  "events": [
+    { "personaId": "alex-p", "content": "Lost a black Cal Poly hoodie in 14-252 after the WiC kickoff. Anyone grab it?" },
+    { "personaId": "maria-l", "content": "Found one while cleaning up! Check the cabinet next to the projector cart; I left it folded there." },
+    { "personaId": "alex-p", "content": "Hero. Will swing by after my 10 a.m. class." }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "linkedin-vs-handshake",
+  "description": "Discussion about when to update LinkedIn versus Handshake after receiving offers.",
+  "events": [
+    { "personaId": "alex-p", "content": "When do you update LinkedIn after accepting an internship? Right away or closer to summer?" },
+    { "personaId": "li-n", "content": "I update LinkedIn once onboarding paperwork is done. For Handshake, wait until the employer posts the official position—you can mark it as 'accepted' under experiences." },
+    { "personaId": "sam-w", "content": "If you're still interviewing, maybe hold off broadcasting it everywhere so you can keep options open." },
+    { "personaId": "alex-p", "content": "Solid advice. Thanks!" }
+  ]
+}

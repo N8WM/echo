@@ -1,0 +1,10 @@
+{
+  "name": "general-welcome",
+  "description": "Friendly welcome thread so the general channel isn’t empty.",
+  "events": [
+    { "personaId": "acm-officer", "content": "Welcome to the CSC Commons! This channel is for quick check-ins, announcements, or sharing wins. Please grab a role in #roles if you haven’t yet." },
+    { "personaId": "maria-l", "content": "If you’re new here, drop your grad year + favorite class so far. Also bookmark #course-help for homework-specific threads." },
+    { "personaId": "alex-p", "content": "Alex (’26) checking in—currently drowning in CSC 225 but loving it." },
+    { "personaId": "sam-w", "content": "Sam here 👋. I keep the lab FAQs updated, so ping me if something looks stale." }
+  ]
+}

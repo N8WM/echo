@@ -21,8 +21,7 @@ async function main() {
     intents: config.intents
   });
 
-  // await LLMSession.pullModel();
-  // TODO: uncomment the line above once 503 errors are resolved
+  await LLMSession.pullModel();
   InterfaceManager.init(client);
 
   // Initialize managers
@@ -41,10 +40,10 @@ async function main() {
     devGuildIds: config.devGuildIds,
     healthCheck: config.healthCheck.enabled
       ? {
-          enabled: true,
-          port: config.healthCheck.port,
-          prisma
-        }
+        enabled: true,
+        port: config.healthCheck.port,
+        prisma
+      }
       : undefined
   });
 

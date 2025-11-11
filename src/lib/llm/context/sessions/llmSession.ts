@@ -149,6 +149,13 @@ export class LLMSession {
   }
 
   static async pullModel() {
+    const { models } = await ollama.list();
+
+    if (models.some((m) => m.name === LLMSession.model)) {
+      Logger.debug(`Using Saved LLM Model "${LLMSession.model}"...`);
+      return;
+    };
+
     Logger.debug(`Pulling LLM Model "${LLMSession.model}"...`);
 
     const response = await ollama.pull({
